@@ -1,8 +1,8 @@
-// src/components/Skills.js
+
 import React, { useEffect, useRef, useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 
-// Define constant circumference (since it does not change)
+
 const RADIUS = 52;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
@@ -14,7 +14,7 @@ const SkillProgressBar = ({ skill, percentage }) => {
       const offset = CIRCUMFERENCE - (percentage / 100) * CIRCUMFERENCE;
       circleRef.current.style.strokeDashoffset = offset;
     }
-  }, [percentage]); // ✅ No need to include `circumference` since it's a constant
+  }, [percentage]); 
 
   return (
     <div className="progress-container">
@@ -50,7 +50,7 @@ const SkillProgressBar = ({ skill, percentage }) => {
             cx="60"
             cy="60"
             strokeDasharray={CIRCUMFERENCE}
-            strokeDashoffset={CIRCUMFERENCE} // Start hidden
+            strokeDashoffset={CIRCUMFERENCE} 
           />
         </svg>
 

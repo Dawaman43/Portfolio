@@ -1,9 +1,9 @@
-// src/components/Footer.js
+
 import React, { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 
 const Footer = () => {
-  const { theme } = useContext(ThemeContext); // Get theme context
+  const { theme } = useContext(ThemeContext); 
 
   return (
     <footer className={`py-4 ${theme === 'dark' ? 'bg-dark text-white' : 'bg-light text-dark'}`}>

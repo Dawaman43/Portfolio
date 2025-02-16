@@ -1,10 +1,10 @@
-// src/context/ThemeContext.js
+
 import React, { createContext, useState, useEffect } from 'react';
 
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('dark'); // Default to dark mode
+  const [theme, setTheme] = useState('dark'); 
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -14,11 +14,11 @@ export const ThemeProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    // Apply the theme class to the body
+    
     document.body.classList.remove('light', 'dark');
     document.body.classList.add(theme);
 
-    // Save the selected theme to localStorage
+    
     localStorage.setItem('theme', theme);
   }, [theme]);
 
