@@ -4,7 +4,7 @@ import { ThemeContext } from '../context/ThemeContext';
 
 const Navbar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const [isOpen, setIsOpen] = useState(false); // State for menu toggle
+  const [isOpen, setIsOpen] = useState(false); 
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className={`navbar navbar-expand-lg navbar-${theme} bg-${theme} fixed-top`}>
       <div className="container">
-        <Link to="/" className="navbar-brand">My Portfolio</Link>
+        <Link to="/" className="navbar-brand">Dawit Worku</Link>
         
         {/* Hamburger Button */}
         <button 
