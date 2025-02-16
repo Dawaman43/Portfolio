@@ -1,38 +1,256 @@
-.App {
+/* ==========================
+   Global Styles
+========================== */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* ==========================
+   Navigation Bar
+========================== */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================
+   Home Section
+========================== */
+.home-section {
+  height: 100vh;
+  background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.home-section p {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+/* ==========================
+   About Section
+========================== */
+.about-container {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.about-image {
+  width: 150px; /* Adjusted size */
+  height: 150px;
+  border-radius: 50%; /* Makes it round */
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.about-image:hover {
+  transform: scale(1.1);
+}
+
+/* ==========================
+   General Styles
+========================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+.element {
+  padding: 100px 0;
+}
+
+/* ==========================
+   Card Styles
+========================== */
+.card {
+  transition: transform 0.3s ease-in-out;
+  background-color: var(--card-bg-color);
+  border-color: var(--card-border-color);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-title {
+  color: var(--card-title-color);
+}
+
+.card-text {
+  color: var(--card-text-color);
+}
+
+/* ==========================
+   Button Styles
+========================== */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* ==========================
+   Footer
+========================== */
+footer {
+  background-color: var(--footer-bg-color);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: relative; /* Changed from fixed to relative */
+  width: 100%;
+  bottom: 0;
+  margin-top: 20px; /* Optional: adds space between content and footer */
+}
+@media (max-width: 767px) {
+  footer {
+    padding: 15px 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+/* ==========================
+   Skill Progress Bar
+========================== */
+.progress-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.progress-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
 }
 
-@keyframes App-logo-spin {
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring__background {
+  stroke: #e0e0e0;
+  stroke-width: 10;
+  fill: transparent;
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 1.2s ease-in-out;
+  stroke-linecap: round;
+  stroke-width: 10;
+  stroke: url(#gradient);
+  stroke-dasharray: 329.8672286269283;
+  stroke-dashoffset: 329.8672286269283;
+}
+
+.progress-ring__circle.animate {
+  stroke-dashoffset: 0;
+}
+
+.progress-percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--card-title-color);
+}
+
+.skill-title {
+  margin-top: 10px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--card-title-color);
+}
+
+/* ==========================
+   Dark & Light Mode Variables
+========================== */
+:root,
+body.light {
+  --bg-color: #f8f9fa;
+  --text-color: #343a40;
+  --footer-bg-color: #343a40;
+  --card-bg-color: #ffffff;
+  --card-border-color: #dee2e6;
+  --card-title-color: #343a40;
+  --card-text-color: #6c757d;
+}
+
+body.dark {
+  --bg-color: #343a40;
+  --text-color: #ffffff;
+  --footer-bg-color: #212529;
+  --card-bg-color: #495057;
+  --card-border-color: #343a40;
+  --card-title-color: #ffffff;
+  --card-text-color: #ffffff;
+}
+
+/* ==========================
+   Light & Dark Mode Detection
+========================== */
+@media (prefers-color-scheme: dark) {
+  body:not(.light) {
+    --bg-color: #343a40;
+    --text-color: #ffffff;
+    --footer-bg-color: #212529;
+    --card-bg-color: #495057;
+    --card-border-color: #343a40;
+    --card-title-color: #ffffff;
+    --card-text-color: #ffffff;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body:not(.dark) {
+    --bg-color: #f8f9fa;
+    --text-color: #343a40;
+    --footer-bg-color: #343a40;
+    --card-bg-color: #ffffff;
+    --card-border-color: #dee2e6;
+    --card-title-color: #343a40;
+    --card-text-color: #6c757d;
+  }
+}
+
+/* ==========================
+   Animation for Skill Progress Bar
+========================== */
+@keyframes progress-bar {
   from {
-    transform: rotate(0deg);
+    stroke-dashoffset: 329.8672286269283;
   }
   to {
-    transform: rotate(360deg);
+    stroke-dashoffset: 0;
   }
 }
