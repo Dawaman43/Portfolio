@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className={`navbar navbar-expand-lg navbar-${theme} bg-${theme} fixed-top`}>
       <div className="container">
-        <Link to="/" className="navbar-brand">My Portfolio</Link>
+        <Link to="/" className="navbar-brand">Dawit Worku</Link>
         
         {/* Hamburger Button */}
         <button 
