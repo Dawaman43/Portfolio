@@ -7,7 +7,7 @@ const Contact = () => {
     const email = encodeURIComponent(event.target.email.value);
     const message = encodeURIComponent(event.target.message.value);
 
-    const mailtoLink = `mailto:your-email@gmail.com?subject=Message from ${name}&body=${message}%0A%0AFrom: ${email}`;
+    const mailtoLink = `mailto:dawitworkujima@gmail.com?subject=Message from ${name}&body=${message}%0A%0AFrom: ${email}`;
     window.location.href = mailtoLink;
   };
 
