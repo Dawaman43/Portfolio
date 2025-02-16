@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className={`py-4 ${theme === 'dark' ? 'bg-dark text-white' : 'bg-light text-dark'}`}>
       <div className="container text-center">
-        <p>&copy; {new Date().getFullYear()} My Portfolio. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Dawit&apos;s Portfolio. All rights reserved.</p>
       </div>
     </footer>
   );
